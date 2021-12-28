@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>人间有味是清欢</title>
+		<meta name="keywords" content="">
+		<meta name="description" content=" ">
+		<link rel="stylesheet" type="text/css" href="css/include3.css" />
+        <style>
+    	  input[type="text"]{
+            width:60px;
+          }
+          .pai{
+            display: inline;
+            font-size: 18px;
+            font-family: '隶书';
+          }
+          .pai0{
+            display: inline;
+            font-size: 25px;
+          }
+          .cal{
+            margin-top: 50px;
+            display: flex; /**/
+            justify-content: center; /*水平居中*/
+            align-items: Center; 
+            background: no-repeat center/80% url('imgs/calbg.png');
+            background-size: cover;
+          }
+          #num1{
+              border-width: 3px;
+              border-radius: 10px;
+              border-color: rgb(206, 170, 128);
+              border-style:dashed;
+              width: 150px;
+              height: 50px;
+              margin-right: 20px;
+              font-family: '华文新魏';
+              font-weight: bold;
+              font-size: 20px;
+          }
+          #num2{
+            border-width: 3px;
+              border-radius: 10px;
+              border-color: rgb(206, 170, 128);
+              border-style:dashed;
+              width: 150px;
+              height: 50px;
+              margin: 20px;
+              font-family: '华文新魏';
+              font-weight: bold;
+              font-size: 20px;
+          }
+          #num3{
+            border-width: 3px;
+              border-radius: 10px;
+              border-color: rgb(206, 170, 128);
+              border-style:dashed;
+              width: 150px;
+              height: 50px;
+              margin: 20px;
+              font-family: '华文新魏';
+              font-weight: bold;
+              font-size: 20px;
+              color: red;
+          }
+          #equal{
+            border-width: 3px;
+              border-radius: 10px;
+              border-color: rgb(206, 170, 128);
+              border-style:dashed;
+              width: 150px;
+              height: 50px;
+              margin: 20px;
+              font-family: '华文新魏';
+              font-weight: bold;
+              font-size: 20px;
+              background-color: rgb(245, 228, 209);
+          }
+          #tishi{
+            margin-top: 50px;
+            display: flex; /**/
+            justify-content: center; /*水平居中*/
+            font-family: "仿宋";
+            font-size: 15px;
+          }
+          .jingfei{
+            margin-top: 50px;
+            font-family: '仿宋';
+              font-weight: bold;
+              font-size: 20px;
+          }
+        </style>
+        <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+		<script type="text/javascript">
+            function compute(){
+            var num1=document.getElementById("num1"); 
+    	    var index = num1.selectedIndex; // 选中索引
+            var val1= num1.options[index].value;//要的值
+            var num2=document.getElementById("num2"); 
+    	    var index = num2.selectedIndex; // 选中索引
+            var val2= num2.options[index].value;//要的值
+    	    var result;
+	        result = val1 + val2;
+            if(result=="12"){
+            	$("#num3").css( "color" , "lightgreen" );
+                document.getElementById("num3").value = "答对啦";
+                document.getElementById("tishi").innerText = "请前往厨房制作佳肴吧！";
+            }
+            else{
+                document.getElementById("num3").value = "再试一次";
+            }
+    	    
+      }
+		  </script>
+	</head>
+	<body>
+		<div class="singlepage">
+			<div class="singlepage_center">
+				<div class="left">
+					<a href="index.html" class="active">返回首页</a>
+					<a href="intro.html">菜肴简介</a>
+					<a href="chushi.html">厨师采访</a>
+					<a href="calculate.html">入市买菜</a>
+					<a href="zuocai.html">制作佳肴</a>
+				</div>
+				<div class="right">
+
+					<div class="tp">
+						<img src="imgs/tp.png" />
+					</div>
+
+					<div class="infobox">
+						<div class="h3">入市买菜</div>
+
+                        <img src="imgs/cai.png" alt="" height="200px">
+                        <p class="pai">西湖龙井：500文</p><img src="imgs/tea.png" alt="" height="200px">
+                        <p class="pai">粽叶：100文</p><img src="imgs/zhuye.png" alt="" height="200px">
+                        <p class="pai">白菜：50文</p><img src="imgs/baicai.png" alt="" height="200px">
+                        <br>
+                        <img src="imgs/meat.png" alt="" height="200px">
+                        <p class="pai">猪肉：400文</p><img src="imgs/pork.png" alt="" height="200px">
+                        <p class="pai">虾仁：200文</p><img src="imgs/xiaren.png" alt="" height="200px">
+                        <p class="pai">牛肉：300文</p><img src="imgs/beef.png" alt="" height="200px"><br>
+                        <p class="jingfei">可支出经费：600文，请根据你的经费和菜肴购买正确的材料</p>
+                        <div class="cal">
+                        
+                        <select id="num1">
+                            <option value="1">西湖龙井</option>
+                            <option value="2">粽叶</option>
+                            <option value="3">青菜</option>
+                          </select>
+                        <p class="pai0">+<p>
+                        <select id="num2">
+                            <option value="1">猪肉</option>
+                            <option value="2">虾仁</option>
+                            <option value="3">牛肉</option>
+                          </select>
+                        
+                        <input type="button" value="=" onclick="compute()" id="equal"/>
+                        
+                        <input type="text" id="num3" />
+                        
+                    </div>
+                    <div id="tishi"></div>
+					</div>
+						
+					<div class="bt">
+						<img src="imgs/bt.png" />
+					</div>
+				</div>
+			</div>
+		</div>
+		
+	</body>
+
+</html>

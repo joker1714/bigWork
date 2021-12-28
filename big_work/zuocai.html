@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>人间有味是清欢</title>
+		<meta name="keywords" content="">
+		<meta name="description" content=" ">
+		<link rel="stylesheet" type="text/css" href="css/include.css" />
+		<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+		<script type="text/javascript" >
+			function compute(){
+            var num1=document.getElementById("yi"); 
+            var index = num1.selectedIndex; // 选中索引
+            var val1= num1.options[index].value;//要的值
+            var num2=document.getElementById("er"); 
+            var index = num2.selectedIndex; // 选中索引
+            var val2= num2.options[index].value;//要的值
+            var num3=document.getElementById("san"); 
+            var index = num3.selectedIndex; // 选中索引
+            var val3= num3.options[index].value;//要的值
+            var result;
+            result = val1 + val2+val3;
+            if(result=="312"){
+	             $("#liaoli").fadeIn(1500,function(){
+    				  $("#liaoli").attr("src","imgs/longjingxiaren.png");
+    				  $("#liaoli").css("opacity","1");
+    			  });
+	            document.getElementById("jieguo").innerHTML="制作成功";
+	            document.getElementById("jieshu").innerHTML="结束旅程";
+            }
+            else{
+            	$("#liaoli").fadeIn(1500,function(){
+    				  $("#liaoli").attr("src","imgs/heianliaoli.png");
+    				  $("#liaoli").css("opacity","1");
+    			  });
+	            document.getElementById("jieguo").innerHTML="制作失败";
+            }
+           
+      }
+		</script>
+	</head>
+	<body>
+		<div class="singlepage">
+			<div class="singlepage_center">
+				<div class="left">
+					<a href="index.html" class="active">返回首页</a>
+					<a href="intro.html">菜肴简介</a>
+					<a href="chushi.html">厨师采访</a>
+					<a href="calculate.html">入市买菜</a>
+					<a href="zuocai.html">制作佳肴</a>
+				</div>
+				<div class="right">
+					<div class="tp">
+						<img src="imgs/tp.png" />
+					</div>
+					<div class="infobox">
+						<div class="h3">制作菜肴</div>
+						<div class="info prolistgroup">
+							<div class="buzhou">
+								<div class="cai">
+									<img src="imgs/chaye.png" />
+                                    <div class="mai">
+                                        <p class="midP">壹：龙井茶用沸水泡开</p>
+                                    </div>
+								</div>
+								<div class="cai">
+									<img src="imgs/disanbu.png" />
+                                    <div class="mai">
+                                        <p class="midP">贰：炒锅加入油置热，放入虾仁以及茶叶茶水一起烹入</p>
+                                    </div>
+								</div>
+								<div class="cai">
+									<img src="imgs/diyibu.png" />
+                                    <div class="mai">
+                                        <p class="midP">叁：用清水洗至虾仁洁白，沥干水加入盐，味精，鸡蛋清和淀粉</p>
+                                    </div>
+								</div>
+							</div>
+					   </div>
+					   <div id="xuanze">
+						    <select id="yi">
+                            <option value="1">壹</option>
+                            <option value="2">贰</option>
+                            <option value="3">叁</option>
+                            </select>
+                            <select id="er">
+                            <option value="1">壹</option>
+                            <option value="2">贰</option>
+                            <option value="3">叁</option>
+                            </select>
+                            <select id="san">
+                            <option value="1">壹</option>
+                            <option value="2">贰</option>
+                            <option value="3">叁</option>
+                            </select>
+                            <p id="shuru">请选择制作步骤</p>                
+						    <p id="tijiao" onclick="compute()">提交</p>
+						    <img id="liaoli" src=""/>
+						    <p id="jieguo"></p>
+						    <a href="end.html"><p id="jieshu"></p></a>
+						</div>
+						
+				</div>
+				<div class="bt">
+						<img src="imgs/bt.png" />
+					</div>
+			</div>
+		</div>
+		
+	</body>
+
+</html>

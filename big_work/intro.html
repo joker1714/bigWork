@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>人间有味是清欢</title>
+		<meta name="keywords" content="">
+		<meta name="description" content=" ">
+		<link rel="stylesheet" type="text/css" href="css/include2.css" />
+		<script type="text/javascript">
+      
+			//图片id
+			var index = 1;
+      
+			window.onload = function(){
+				//给li添加鼠标点击事件
+				for(var i=1;i<=2;i++){
+				document.getElementById("li"+i).onclick = function(){
+					index = this.id.replace("li","");
+					setAnimate();
+				}
+				}
+			}
+			
+			//切换图片
+			function setAnimate(){
+				//设置view_box背景图片
+				document.getElementById("view_box").style.backgroundImage = "url('imgs/longjingxiaren"+index+".png')";
+				
+				//设置li背景色
+				for(var i=1;i<=2;i++){
+				document.getElementById("li"+i).style.backgroundColor = "yellowgreen";
+				document.getElementById("li"+i).style.opacity = 0.5;
+				}
+				document.getElementById("li"+index).style.backgroundColor = "beige";
+				document.getElementById("li"+index).style.opacity = 1;
+			}
+		  </script>
+	</head>
+	<body>
+		<div class="singlepage">
+			<div class="singlepage_center">
+				<div class="left">
+					<a href="index.html" class="active">返回首页</a>
+					<a href="#">菜肴简介</a>
+					<a href="chushi.html">厨师采访</a>
+					<a href="calculate.html">入市买菜</a>
+					<a href="zuocai.html">制作佳肴</a>
+				</div>
+				<div class="right">
+
+					<div class="tp">
+						<img src="imgs/tp.png" />
+					</div>
+
+					<div class="infobox">
+
+						<div class="h3">菜肴简介</div>
+
+						<div id="view_box">
+								<div class="btn_list">
+								  <ul>
+									<li id="li1">1</li>
+									<li id="li2">2</li>
+								   </ul>
+							 </div>
+						</div>
+						
+						<div class="longjingxiaren">
+							<p>龙井虾仁，是中国浙江省杭州市传统风味名菜，为浙江菜系。<br>
+								龙井虾仁将茶饮与虾仁融合，整体清新软嫩，<br>
+								虾仁玉白，鲜嫩，芽叶清香，色泽雅丽，虾中有茶香，茶中有虾鲜，<br>
+								食后清口开胃，回味无穷。<br>
+								相传，杭州厨师受苏东坡词《望江南》“且将新火试新茶，诗酒趁年华”的启发，<br>
+								选用“色绿、香郁、味甘、形美”的明前龙井新茶和鲜河虾仁烹制而成。<br>
+								《茶经》有言：不羡黄金罍，不羡白玉杯，不羡朝入省，不羡暮入台。<br>
+								拆“茶”一字，可知人在于草木之间。因而品茶无关器具外在，唯在于心</p>
+    		       	 	</div>
+
+					</div>
+						
+					<div class="bt">
+						<img src="imgs/bt.png" />
+					</div>
+				</div>
+			</div>
+		</div>
+		
+	</body>
+
+</html>
